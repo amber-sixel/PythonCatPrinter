@@ -111,7 +111,7 @@ def detect_printer(detected, advertisement_data):
         cut_addr = detected.address.replace(":", "")[-(len(address)):].upper()
         if cut_addr != address:
             return
-    if detected.name == 'GB01':
+    if detected.name in ['GT01', 'GB01']:
         device = detected
 
 
@@ -149,6 +149,7 @@ async def connect_and_send(data):
     if not device:
         raise BleakError(f"The printer was not found.")
     async with BleakClient(device) as client:
+        print("found {0}".format(device.name))
         # Set up callback to handle messages from the printer
         await client.start_notify(NotifyCharacteristic, notification_handler)
 
