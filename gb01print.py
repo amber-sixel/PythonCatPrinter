@@ -111,7 +111,7 @@ def detect_printer(detected, advertisement_data):
         cut_addr = detected.address.replace(":", "")[-(len(address)):].upper()
         if cut_addr != address:
             return
-    if detected.name == 'GB01':
+    if detected.name in ['GB01','GB03']:
         device = detected
 
 

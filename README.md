@@ -6,6 +6,8 @@ The GB01 is a small Bluetooth thermal printer that uses receipt paper.
 I don't know if it's been built into other cases, but mine kind of looks like a cat.
 You can tell it's a GB01 because it shows up as a Bluetooth device called "GB01" when you scan for it.
 
+Additionally supports the GB03 printer.
+
 This script takes a filename as its only required parameter. 
 It will attempt to load the file as an image, 
 connect to the first Bluetooth low energy device called "GB01" it finds,
